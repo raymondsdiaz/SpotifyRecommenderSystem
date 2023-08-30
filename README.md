@@ -32,6 +32,17 @@ Below are the features that I would be working with for my recommender system.
 
 There was no data wrangling that needed to be done or imputing of values on the most recently played dataset because all the track features pulled from Spotify's API would return a value. Additionally, the data that was sourced also had all the track features pre-populated which got rid of the need to do any rigorous cleansing.
 
+One of the few visualizations I wanted to take a look at was the distribution of each song feature across both datasets. 
+
+Most Recently Played
+![image](https://github.com/raymondsdiaz/SpotifyRecommenderSystem/blob/main/tracks_violin.jpg)
+Kaggle Dataset
+![image](https://github.com/raymondsdiaz/SpotifyRecommenderSystem/blob/main/data_violin.jpg)
+
+Another visualization that was extremely helpful in determining on whether or not we could distinguish patterns in a user's listening behavior was clustering. For this visualization, I utilized KMeans clustering to take a look at the patterns. KMeans clustering essentially attempts to average the data out and find a centroid point for the number of clusters you want to create. 
+
+![image](https://github.com/raymondsdiaz/SpotifyRecommenderSystem/blob/main/clustering.jpg)
+
 # Modeling
 
 # Limitations

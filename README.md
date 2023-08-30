@@ -32,18 +32,20 @@ Below are the features that I would be working with for my recommender system.
 
 There was no data wrangling that needed to be done or imputing of values on the most recently played dataset because all the track features pulled from Spotify's API would return a value. Additionally, the data that was sourced also had all the track features pre-populated which got rid of the need to do any rigorous cleansing.
 
-One of the few visualizations I wanted to take a look at was the distribution of each song feature across both datasets. 
+One of the few visualizations I wanted to take a look at was the distribution of each song feature across both datasets. The top is a visualization of the 50 most recently played songs and the bottom visualization takes a look at the distribution in the Kaggle dataset.
 
-Most Recently Played
 ![image](https://github.com/raymondsdiaz/SpotifyRecommenderSystem/blob/main/tracks_violin.jpg)
-Kaggle Dataset
 ![image](https://github.com/raymondsdiaz/SpotifyRecommenderSystem/blob/main/data_violin.jpg)
 
 Another visualization that was extremely helpful in determining on whether or not we could distinguish patterns in a user's listening behavior was clustering. For this visualization, I utilized KMeans clustering to take a look at the patterns. KMeans clustering essentially attempts to average the data out and find a centroid point for the number of clusters you want to create. 
 
 ![image](https://github.com/raymondsdiaz/SpotifyRecommenderSystem/blob/main/clustering.jpg)
 
+As you can see from the top image, it's hard to create specific clusters for a listener with just 50 songs, especially if they are into various different genres of music. 
+
 # Modeling
+
+For modeling, I utilized KMeans clustering to attempt to cluster the user's most recently played songs and the Kaggle dataset to create a feature to use in the comparison process. Once I was able to cluster the data, what I then did was utilize Cosine Similarity to compare the two datasets. Cosine Similarity is an algorithm that measures the similarity of orientation of the two vectors (in this case, the features that we mentioned above). Anything scoring closer to 1 means that the tracks are similar in nature to what the user's most recently played songs were and would be a good song recommendation to that user. Anything that scored closer to a 0 meant that the song was not related to the user's most recently played songs.
 
 # Limitations
 

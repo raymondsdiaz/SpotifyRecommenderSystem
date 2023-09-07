@@ -11,6 +11,12 @@ The first [dataset](https://www.kaggle.com/datasets/yamaerenay/spotify-dataset-1
 
 The second dataset is data pulled from Spotify's API and looking at a user's most recently played songs and creating a dataframe containing the tracks and their song features.
 
+# How To Run This Code
+
+# Modeling
+
+For modeling, I utilized KMeans clustering to attempt to cluster the user's most recently played songs and the Kaggle dataset to create a feature to use in the comparison process. Once I was able to cluster the data, what I then did was utilize Cosine Similarity to compare the two datasets. Cosine Similarity is an algorithm that measures the similarity of orientation of the two vectors (in this case, the features that we mentioned above). Anything scoring closer to 1 means that the tracks are similar in nature to what the user's most recently played songs were and would be a good song recommendation to that user. Anything that scored closer to a 0 meant that the song was not related to the user's most recently played songs.
+
 # Exploratory Data Analysis
 
 Below are the features that I would be working with for my recommender system.
@@ -43,11 +49,7 @@ Another visualization that was extremely helpful in determining on whether or no
 
 As you can see from the top image, it's hard to create specific clusters for a listener with just 50 songs, especially if they are into various different genres of music. 
 
-# Modeling
-
-For modeling, I utilized KMeans clustering to attempt to cluster the user's most recently played songs and the Kaggle dataset to create a feature to use in the comparison process. Once I was able to cluster the data, what I then did was utilize Cosine Similarity to compare the two datasets. Cosine Similarity is an algorithm that measures the similarity of orientation of the two vectors (in this case, the features that we mentioned above). Anything scoring closer to 1 means that the tracks are similar in nature to what the user's most recently played songs were and would be a good song recommendation to that user. Anything that scored closer to a 0 meant that the song was not related to the user's most recently played songs.
-
-# Limitations
+# Limitations and Issues
 
 The biggest limitation that I faced when creating this recommender system was that Spotify's API offered limited amounts of data for what I wanted to accomplish. What I mean by this is that when you pull a user's most recently played songs, you are limited to only 50 songs. To create a recommender system that is much more precise and accurate for this specific use case, we should be using at least a months worth of listening history in order to capture a user's true music taste. And unfortunately, that just simply is not possible with Spotify's API.
 
